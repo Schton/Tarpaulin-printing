@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile | Order History</title>
+        <link rel="stylesheet" href="..\css\navbar.css">
+        <link rel="stylesheet" href="..\css\footer.css">
+        <!-- icons -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+        <!-- font styles -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap" rel="stylesheet">
+        <link rel="icon" href="..\images\smartpress.png" type="image/x-icon">
+</head>
+<style>
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100dvh;
+    background-color: #023047;
+    font-family: "Play", sans-serif;
+}
+
+.container {
+    padding: 20px;
+    display: flex;
+    margin-top:10em;
+    justify-content: center;
+}
+
+.account-section {
+    min-width: 300px;
+    line-height: 1.8rem;
+}
+
+.account-nav ul {
+    list-style: none;
+}
+
+.account-nav a {
+    cursor: pointer;
+    color: #858688;
+    text-decoration: none;
+}
+
+.account-nav a:hover {
+    color: #FB8500;
+}
+
+.account-header {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+.profile-pic {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+.order-history {
+    padding: 25px;
+    min-width: 700px;
+    line-height: 1.5rem;
+    background-color: #ffffff;
+    box-shadow: 2px 2px 20px 4px rgba(0,0,0,0.5);
+}
+
+.order-history-header p {
+    margin-bottom: 5px;
+}
+
+.order-details {
+    height: 500px;
+    display: flex;
+    padding: 10px;
+    margin-top: 20px;
+    overflow-y: auto;
+    line-height: 3rem;
+    align-items: center;
+    flex-direction: column;
+    border: 1px solid #ddd;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+  
+th, td {
+    min-width: 30px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+</style>
+<body>
+    <!-- navigation bar -->
+    <div class="navbar">
+        <nav>
+            <div class="nav-logo"><a href="..\php-html\home.php"><img src="..\images\smartpress.png" alt=""></a></div>
+            <div class="printing-services"><a href="..\php-html\orderform.html">Printing Services</a></div>
+            <div class="community">
+                <select id="community-dropdown" onchange="location = this.value">
+                    <option value="" disabled selected>Community</option>
+                    <option value="..\php-html\About_Us.html">About Us</option>
+                    <option value="..\php-html\Contact_Us.html">Contact Us</option>
+                    <option value="..\php-html\FAQs.html">FAQs</option> <!-- kini nlang-->
+                </select>
+            </div>
+            <div class="profile"><a href="..\php-html\profile-page.html"><i class="fa-regular fa-user"></i></a></div>        
+        </nav>
+    </div>
+    <div class="container">
+        <div class="account-section">
+            <div class="account-header">
+                <i class="fa-regular fa-user" style="margin-right: 1em;color:white;"></i>
+                <h3 class="account-title" style="color:white;">My Account</h3>
+            </div>
+            <div class="account-nav">
+                <ul>
+                    <li><a href="profile-page.html">Account Information</a></li>
+                    <li><a href="order-history.html">Order History</a></li>
+                    <li><a href="#">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="order-history">
+            <div class="order-history-header">
+                <h3 class="order-history-title">Hello, John</h3>
+                <p class="order-history-description">View all your orders, past and present</p>
+                <hr>
+            </div>
+            <div class="order-details">
+                <table>
+                    <tbody>
+                        <tr>
+                            <th>Order ID</th>
+                            <th>Date Ordered</th>
+                            <th>Product Type</th>
+                            <th>Product Size</th>
+                            <th>Order Type</th>
+                            <th>Status</th>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+     <!-- footer -->
+     <div class="footer-container">
+        <div class="socials">
+            <div class="footer-logo">
+                <img src="..\images\smartpress.png" alt="">
+            </div>
+            
+            <div class="social-media-links">
+                <div class="fb">
+                    <i class="fa-brands fa-facebook fa-2x"></i>
+                </div>
+                <div class="twitter">
+                    <i class="fa-brands fa-square-twitter fa-2x"></i>
+                </div>
+                <div class="instagram">
+                    <i class="fa-brands fa-square-instagram fa-2x"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-help">
+            <h4 id="footer-help-title">Help</h4>
+
+            <a href="..\php-html\Contact_Us.html">Contact Us</a>
+            <a href="..\php-html\FAQs.html">FAQs</a>
+        </div>
+
+        <div class="footer-about">
+            <h4 id="footer-about-title">About</h4>
+
+            <a href="..\php-html\About_Us.html">About Us</a>
+            <a href="..\php-html\About_Us.html">Our Process</a>
+        </div>
+    </div>
+<!-- <script>
+const orderHistory = [{
+    dateOrdered: "2024-03-20",
+    orderID: 2344,
+    productType: "Tarpaulin",
+    productSize: "80x133",
+    orderType: "Priority",
+    status: "Pending"
+}, {
+    dateOrdered: "2024-03-01",
+    orderID: 3453,
+    productType: "Billboard",
+    productSize: "100x133",
+    orderType: "Priority",
+    status: "Pending"
+}, {
+    dateOrdered: "2024-03-17",
+    orderID: 1345,
+    productType: "Poster",
+    productSize: "80x133",
+    orderType: "Priority",
+    status: "Completed"
+}, {
+    dateOrdered: "2024-03-17",
+    orderID: 1345,
+    productType: "Poster",
+    productSize: "80x133",
+    orderType: "Priority",
+    status: "Completed"
+}, {
+    dateOrdered: "2024-03-17",
+    orderID: 1345,
+    productType: "Poster",
+    productSize: "80x133",
+    orderType: "Priority",
+    status: "Completed"
+}, {
+    dateOrdered: "2024-03-17",
+    orderID: 1345,
+    productType: "Poster",
+    productSize: "80x133",
+    orderType: "Priority",
+    status: "Completed"
+}, {
+    dateOrdered: "2024-03-17",
+    orderID: 1345,
+    productType: "Poster",
+    productSize: "80x133",
+    orderType: "Priority",
+    status: "Completed"
+}, {
+    dateOrdered: "2024-03-17",
+    orderID: 1345,
+    productType: "Poster",
+    productSize: "80x133",
+    orderType: "Priority",
+    status: "Completed"
+}, {
+    dateOrdered: "2024-03-17",
+    orderID: 1345,
+    productType: "Poster",
+    productSize: "80x133",
+    orderType: "Priority",
+    status: "Completed"
+}, {
+    dateOrdered: "2024-03-17",
+    orderID: 1345,
+    productType: "Poster",
+    productSize: "80x133",
+    orderType: "Priority",
+    status: "Completed"
+}, {
+    dateOrdered: "2024-03-17",
+    orderID: 1345,
+    productType: "Poster",
+    productSize: "80x133",
+    orderType: "Priority",
+    status: "Completed"
+}, {
+    dateOrdered: "2024-03-17",
+    orderID: 1345,
+    productType: "Poster",
+    productSize: "80x133",
+    orderType: "Priority",
+    status: "Completed"
+}, {
+    dateOrdered: "2024-03-17",
+    orderID: 1345,
+    productType: "Poster",
+    productSize: "80x133",
+    orderType: "Priority",
+    status: "Completed"
+}, {
+    dateOrdered: "2024-03-17",
+    orderID: 1345,
+    productType: "Poster",
+    productSize: "10000x23",
+    orderType: "Priority",
+    status: "Completed"
+}];
+
+function displayHistory() {
+    const tableBody = document.querySelector("tbody");
+    tableBody.innerHTML = "";
+    tableBody.innerHTML = `
+    <tr>
+        <th>Date Ordered</th>
+        <th>Order ID</th>
+        <th>Product Type</th>
+        <th>Product Size</th>
+        <th>Order Type</th>
+        <th>Status</th>
+    </tr>`;
+
+    const formatter = new Intl.DateTimeFormat('en-US', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+    });
+
+    orderHistory.forEach((item) => {
+        const dateObj = new Date(item.dateOrdered);
+        const formattedDate = formatter.format(dateObj);
+
+        const row = document.createElement("tr");
+
+        const dateOrderedCell = document.createElement("td");
+        dateOrderedCell.innerText = formattedDate;
+        row.appendChild(dateOrderedCell);
+
+        const orderIdCell = document.createElement("td");
+        orderIdCell.innerText = item.orderID;
+        row.appendChild(orderIdCell);
+
+        const productTypeCell = document.createElement("td");
+        productTypeCell.innerText = item.productType;
+        row.appendChild(productTypeCell)
+
+        const productSizeCell = document.createElement("td");
+        productSizeCell.innerText = item.productSize;
+        row.appendChild(productSizeCell);
+
+        const orderTypeCell = document.createElement("td");
+        orderTypeCell.innerText = item.orderType;
+        row.appendChild(orderTypeCell);
+
+        const statusCell = document.createElement("td");
+        statusCell.innerText = item.status;
+        row.append(statusCell);
+
+        tableBody.appendChild(row);
+    });
+}
+displayHistory();
+    
+</script> -->
+</body>
+</html>
